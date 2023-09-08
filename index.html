@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Getting Start Vue 3!</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+</head>
+<body>
+    <section id="app">
+        <h4 v-show="showtitle"> This Title is shown using v-show</h4>
+        <p v-if="likePizza">
+          {{ title }}
+        </p>
+        <p v-else>
+          <b>I Don't love pizza</b>
+
+          </p>
+        <div id="title">Types of Pizza:</div>
+        <ul  >
+          <li v-for="pizza in pizzaTypes" :key="pizza">
+            {{ pizza }}
+          </li>
+        </ul>
+        <p><b>Conditionally display Pizza</b> </p>
+        <ul  >
+          <li v-if="displayPizza"  v-for="pizza in pizzaTypes" :key="pizza">
+            {{ pizza }}
+          </li>
+        </ul>
+
+        <!-- Form Input Handling with v-model -->
+        <label for="favorite-pizza">What's your Favorite Pizza?(<small>using v-model)</small></label><br>
+        <input type="text" v-model="favoritePizza" placeholder="Type something">
+        <p>You typed: {{ favoritePizza }}</p>
+    </section>    
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src='app.js'></script>
+</html>
